@@ -62,13 +62,58 @@ public class AlumnoDAOMySQL implements AlumnoDAO {
 
     }
 
-    @Override
-    public void modificar(Alumno a) {
 
+
+    @Override
+    public void modificar(Alumno a) throws DAOExecption {
+        // "UPDATE alumnos SET nombre = ?, apellido = ?, fecha_nac = ? WHERE id_alumno  = ?";
+        PreparedStatement stat = null;
+        try {
+            stat = conn.prepareStatement(UPDATESQL);
+            stat.setString(1, a.getNombre());
+            stat.setString(2, a.getApellido());
+            stat.setDate(3, new Date(a.getFechaNacimiento().getTime()));
+            stat.setLong(4, a.getId());
+            if (stat.executeUpdate() == 0) {
+                throw new DAOExecption("Puede que no se haya guardado");
+            }
+        } catch (SQLException ex) {
+            throw new DAOExecption("Error en SQL", ex);
+        } finally {
+            if (stat != null) {
+                try {
+                    stat.close();
+                } catch (SQLException ex) {
+                    throw new DAOExecption("Error de SQL", ex);
+                }
+            }
+        }
     }
 
     @Override
-    public void eliminar(Alumno a) {
+    public void eliminar(Alumno a) throws DAOExecption {
+        // "DELETE FROM alumnos WHERE id_alumno = ?";
+        PreparedStatement stat = null;
+        try {
+            stat = conn.prepareStatement(DELETESQL);
+            stat.setLong(1,a.getId());
+            if (!stat.execute()) {
+                throw new DAOExecption("Error al borrar");
+            }
+        }catch (SQLException ex) {
+            throw new DAOExecption("Error en SQL", ex);
+        }finally {
+            if (stat!= null) {
+                try {
+                    stat.close();
+                } catch (SQLException ex) {
+                    new DAOExecption("Error al cerrar conexion");
+                }
+            }
+        }
+
+
+
 
     }
 
