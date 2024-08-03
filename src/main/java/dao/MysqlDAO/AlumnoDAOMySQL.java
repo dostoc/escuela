@@ -15,6 +15,8 @@ public class AlumnoDAOMySQL implements AlumnoDAO {
     final String DELETESQL = "DELETE FROM alumnos WHERE id_alumno = ?";
     final String GETALLSQL = "SELECT id_alumno, nombre, apellido, fecha_nac FROM alumnos";
     final String GETONESQL = "SELECT id, nombre, apellido, fecha_nac FROM alumnos WHERE id_alumno = ?";
+    final String GETNAME =  "SELECT id, nombre, apellido, fecha_nac FROM alumnos WHERE name = ?";
+
 
 
     private Connection conn;
@@ -189,4 +191,35 @@ public class AlumnoDAOMySQL implements AlumnoDAO {
         }
         return a;
     }
+
+
+
+    public static void main(String[] args) throws SQLException {
+        Connection conn = null;
+
+        try {
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/escuela","root","root");
+            System.out.println(conn.getMetaData().getDriverName()); //con esto corroboramos que no sea null
+            AlumnoDAO dao = new AlumnoDAOMySQL(conn);
+            List<Alumno> alumnos = dao.listarTodos();
+            if (alumnos.size() == 0) {
+                System.out.println("Lista vacia");
+            }
+            for(Alumno a : alumnos){
+                System.out.println(a);
+            }
+            dao.eliminar(alumnos.get(0));
+
+        } catch (SQLException | DAOExecption ex) {
+            new DAOExecption("Algo fallo", ex);
+        }finally {
+            try {
+                conn.close();
+            } catch (SQLException ex) {
+                new DAOExecption("Aglo fallo", ex);
+            }
+        }
+    }
+
+
 }

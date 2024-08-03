@@ -1,0 +1,11 @@
+
+“	java:S117
+"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¥õœı8Ëïış2J$46135747-3178-45d5-bbb7-118bf2a8d988
+•	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(£—¾J$05917846-1e3f-415c-8591-32ccb9539899
+Ä
+java:S1186
+"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¥õœı8Îïış2J$00a7aab9-478d-4c39-9a8b-d42e73a233b5
+Ä
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ˆ´‡ó8Îïış2J$0759d671-8bd7-42fc-a1b2-1ed89cdba3ef
+Ä
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(®ïËí8Îïış2J$bf9fca74-005f-4610-a4f2-2328bd2c318e

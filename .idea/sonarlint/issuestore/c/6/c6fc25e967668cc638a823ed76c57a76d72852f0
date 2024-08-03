@@ -1,0 +1,72 @@
+
+
+java:S1192Y"MDefine a constant instead of duplicating this literal "Error de SQL" 3 times.(ÆÅş8öÇ¿‘2J$451e9202-167b-4deb-82d3-03c51badfbe3
+
+java:S1192<"MDefine a constant instead of duplicating this literal "Error en sql" 3 times.(ûæg8÷Ç¿‘2J$1804edda-35cb-41e0-8913-421be190aa71
+
+java:S11926"MDefine a constant instead of duplicating this literal "Error en SQL" 3 times.(Œ¹îö8÷Ç¿‘2J$14e1abdc-5224-4641-a921-925bce8995b8
+
+java:S1163<"=Refactor this code to not throw exceptions in finally blocks.(ûæg8øÇ¿‘2J$6e484faa-d084-43ba-a8ff-761882101c80
+€
+java:S1163Y"=Refactor this code to not throw exceptions in finally blocks.(ÆÅş8øÇ¿‘2J$291c8fce-a2f9-4ace-9eb8-8f7777fcc607
+†
+java:S1163"=Refactor this code to not throw exceptions in finally blocks.(ì°°­şÿÿÿÿ8øÇ¿‘2J$0d4f0086-5c6c-4eef-9b55-5147d862c2b6
+†
+java:S1163˜"=Refactor this code to not throw exceptions in finally blocks.(ì°°­şÿÿÿÿ8øÇ¿‘2J$16861581-2fc3-4c2d-ad9c-4de374247bc1
+†
+java:S1163µ"=Refactor this code to not throw exceptions in finally blocks.(“ÃÒ·øÿÿÿÿ8øÇ¿‘2J$81def255-548a-44ec-b927-a10a10555cfb
+
+java:S1163¼"=Refactor this code to not throw exceptions in finally blocks.(‚ÆÕ‹8øÇ¿‘2J$55932eb7-2dab-4b57-b6c7-ebe68a772e95
+v
+java:S1143<"4Remove this throw statement from this finally block.(ûæg8ùÇ¿‘2J$591d3fde-67a7-4c8a-9746-5aa5b00ea2a2
+w
+java:S1143Y"4Remove this throw statement from this finally block.(ÆÅş8ùÇ¿‘2J$0feff396-a355-4a97-8f1b-bcc3bb8b0c6e
+}
+java:S1143"4Remove this throw statement from this finally block.(ì°°­şÿÿÿÿ8ùÇ¿‘2J$6fd9868c-e3c4-44de-9ef7-af97a53e2a14
+}
+java:S1143˜"4Remove this throw statement from this finally block.(ì°°­şÿÿÿÿ8ùÇ¿‘2J$60e2717d-9717-48b6-bbf0-baa94a803cc8
+}
+java:S1143µ"4Remove this throw statement from this finally block.(“ÃÒ·øÿÿÿÿ8ùÇ¿‘2J$c98274dd-fddf-46c4-b1b8-f562d96ecc7e
+x
+java:S1143¼"4Remove this throw statement from this finally block.(‚ÆÕ‹8ùÇ¿‘2J$6e70df00-0542-4fe2-a0b1-29b2f49643a7
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(£—¾8úÇ¿‘2J$89cb778a-fbd5-404b-92fb-eebe0b571783
+‹
+java:S2259Ù"BA "NullPointerException" could be thrown; "conn" is nullable here.(…¤© ÿÿÿÿÿ8Ö è¿‘2J$42c1e8c6-d3b0-4e67-9f42-1b81c6143e8d
+˜
+java:S2095¦"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(‘•¶®ùÿÿÿÿ8”Ç¿‘2J$588708b5-b51e-46f8-bc83-04860ba337cd
+›	java:S116"TRename this field "INSERTSQL" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Á´ùÓûÿÿÿÿ8•Ç¿‘2J$3d0c132e-1f0c-4c82-bda1-6d97d798294b
+›	java:S116"TRename this field "UPDATESQL" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ä÷¢äùÿÿÿÿ8•Ç¿‘2J$0addb519-84ae-4f05-ba8f-6a97b905bd30
+›	java:S116"TRename this field "DELETESQL" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ëèàâúÿÿÿÿ8•Ç¿‘2J$ef8762e5-120b-4d74-8fb5-e11319eb2b28
+–	java:S116"TRename this field "GETALLSQL" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(´±ä8•Ç¿‘2J$9d8f4441-9d80-41a9-810c-3a4dc5eedac0
+›	java:S116"TRename this field "GETONESQL" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ù¦Óğüÿÿÿÿ8•Ç¿‘2J$fdf23839-4075-4c0e-945a-4ed78e01de04
+”	java:S116"RRename this field "GETNAME" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ıœÀÿ8•Ç¿‘2J$b64e3789-84b7-499c-bd9a-a96daff0a144
+i
+java:S1170"!Make this final field static too.(Á´ùÓûÿÿÿÿ8•Ç¿‘2J$8e345cad-da04-48c8-b41c-f55b88339e48
+i
+java:S1170"!Make this final field static too.(Ä÷¢äùÿÿÿÿ8•Ç¿‘2J$41bff6b1-3bf7-42f4-8dec-004c03355167
+i
+java:S1170"!Make this final field static too.(ëèàâúÿÿÿÿ8•Ç¿‘2J$b492915f-2aa5-4524-90fa-8a3c5256619d
+d
+java:S1170"!Make this final field static too.(´±ä8•Ç¿‘2J$99c07dce-6d38-46c3-8af9-0c1f8f501f30
+i
+java:S1170"!Make this final field static too.(ù¦Óğüÿÿÿÿ8•Ç¿‘2J$abb5be1a-ae11-4b56-91da-9753f437fb60
+d
+java:S1170"!Make this final field static too.(ıœÀÿ8•Ç¿‘2J$57af8da4-91c9-45c5-b2d1-303e3d5cdff5
+ƒ	java:S125'"<This block of commented-out lines of code should be removed.(ÚÔ£Šıÿÿÿÿ8™Ç¿‘2J$2192aab8-e653-422e-bd0f-cd93bfe13927
+~	java:S125G"<This block of commented-out lines of code should be removed.(Ü¾Èƒ8›Ç¿‘2J$40c0c96d-0ac1-4694-8252-25b5dd4afdf0
+~	java:S125a"<This block of commented-out lines of code should be removed.(ËÿÎĞ8œÇ¿‘2J$67ba7884-2850-4b7b-bfd5-97f8a41e0c28
+y
+java:S3984p"6Throw this exception or remove this useless statement.(äû™¦8Ç¿‘2J$03e826e9-a704-4c62-bac0-38741e3eaacb
+o
+java:S1481"'Remove this unused "id" local variable.(ä¸æ­úÿÿÿÿ8ŸÇ¿‘2J$1f44fe6a-4622-4ac9-a563-2ad66da61780
+
+java:S6437É"6Revoke and change this password, as it is compromised.(à¡»¬ÿÿÿÿÿ8¢Ç¿‘2J$5a765ae7-4495-4c5a-97a1-c864a0a0f22c
+n	java:S106Ê"+Replace this use of System.out by a logger.(Ü¹Ï8£Ç¿‘2J$9cacf7ae-8f0b-4c5f-8795-c08623607b96
+‡
+java:S1155Í">Use isEmpty() to check whether the collection is empty or not.(µñÒúÿÿÿÿ8¤Ç¿‘2J$06f2ff18-ab80-4966-8477-479a32ba06e1
+s	java:S106Î"+Replace this use of System.out by a logger.(¿á”»úÿÿÿÿ8¤Ç¿‘2J$5b9f50f3-7e49-4274-a277-bf296da1dff4
+s	java:S106Ñ"+Replace this use of System.out by a logger.(æ¨¤šøÿÿÿÿ8¤Ç¿‘2J$485107b1-6bbe-4473-bfeb-5017b8bbde95
+z
+java:S3984Ö"6Throw this exception or remove this useless statement.(¨²åñ8¤Ç¿‘2J$087f5ad1-0f23-475f-b50f-e68ba7e905fb
+
+java:S3984Û"6Throw this exception or remove this useless statement.(ä‘ˆ€ÿÿÿÿÿ8¤Ç¿‘2J$6d0f3712-9874-49d0-8366-2f5e9b90b7f3

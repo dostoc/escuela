@@ -38,3 +38,5 @@ G.idea/sonarlint/issuestore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec,8\6\86
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
 Å
 Q.idea/sonarlint/securityhotspotstore/6/d/6d00afa0d32f1e5181d8a4ad7ed3e7761f2b8da7,7\f\7fa9fc67e6eb6b6872543d83e203cdeb5b9cf486
+T
+$src/main/java/conexion/Conexion.java,5\d\5d021a782578681df8ef8bd33bfd69651cb32fc3
