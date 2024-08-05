@@ -1,6 +1,7 @@
 package dao.MysqlDAO;
 
 import dao.AlumnoDAO;
+import dao.DAO;
 import dao.DAOExecption;
 import modelo.Alumno;
 
@@ -10,19 +11,25 @@ import java.util.List;
 
 public class AlumnoDAOMySQL implements AlumnoDAO {
 
+
     final String INSERTSQL = "INSERT INTO alumnos(id_alumno, nombre, apellido, fecha_nac) VALUES (?,?,?,?)";
     final String UPDATESQL = "UPDATE alumnos SET nombre = ?, apellido = ?, fecha_nac = ? WHERE id_alumno  = ?";
     final String DELETESQL = "DELETE FROM alumnos WHERE id_alumno = ?";
     final String GETALLSQL = "SELECT id_alumno, nombre, apellido, fecha_nac FROM alumnos";
-    final String GETONESQL = "SELECT id, nombre, apellido, fecha_nac FROM alumnos WHERE id_alumno = ?";
-    final String GETNAME =  "SELECT id, nombre, apellido, fecha_nac FROM alumnos WHERE name = ?";
-
+    final String GETONESQL = "SELECT id_alumno, nombre, apellido, fecha_nac FROM alumnos WHERE id_alumno = ?";
+    final String GETNAME = "SELECT id_alumno, nombre, apellido, fecha_nac FROM alumnos WHERE nombre = ?";
 
 
     private Connection conn;
 
     public AlumnoDAOMySQL(Connection conn) {
         this.conn = conn;
+    }
+
+
+    private Alumno crearAlumno(String nombre, String apellido, Date fechaNacimiento) {
+        Alumno a = new Alumno(nombre, apellido, fechaNacimiento);
+        return a;
     }
 
     private Alumno convertir(ResultSet rs) throws SQLException {
@@ -33,7 +40,6 @@ public class AlumnoDAOMySQL implements AlumnoDAO {
         alumno.setId(rs.getLong("id_alumno"));
         return alumno;
     }
-
 
     /*
     INSERT INTO alumnos(id_alumno, nombre, apellido, feccha_mac) VALUES (50,"PACO","PEREZ",2015-01-01);
@@ -63,7 +69,6 @@ public class AlumnoDAOMySQL implements AlumnoDAO {
         }
 
     }
-
 
 
     @Override
@@ -98,14 +103,14 @@ public class AlumnoDAOMySQL implements AlumnoDAO {
         PreparedStatement stat = null;
         try {
             stat = conn.prepareStatement(DELETESQL);
-            stat.setLong(1,a.getId());
+            stat.setLong(1, a.getId());
             if (!stat.execute()) {
                 throw new DAOExecption("Error al borrar");
             }
-        }catch (SQLException ex) {
+        } catch (SQLException ex) {
             throw new DAOExecption("Error en SQL", ex);
-        }finally {
-            if (stat!= null) {
+        } finally {
+            if (stat != null) {
                 try {
                     stat.close();
                 } catch (SQLException ex) {
@@ -113,8 +118,6 @@ public class AlumnoDAOMySQL implements AlumnoDAO {
                 }
             }
         }
-
-
 
 
     }
@@ -193,26 +196,81 @@ public class AlumnoDAOMySQL implements AlumnoDAO {
     }
 
 
+    @Override
+    public List<Alumno> buscarPorNombre(String nombre) throws DAOExecption {
+        List<Alumno> alumnos = new ArrayList<>();
+        Alumno a = null;
+        PreparedStatement stat = null;
+        ResultSet rs = null;
+
+
+        try {
+            stat = conn.prepareStatement(GETNAME);
+            stat.setString(1, nombre);
+            rs = stat.executeQuery();
+
+            while (rs.next()) {
+                alumnos.add(convertir(rs));
+            }
+
+        } catch (SQLException ex) {
+            throw new DAOExecption("Error en en la sql", ex);
+        } finally {
+            // cierre de conexiones rs - conn
+            if (conn != null) {
+                try {
+                    conn.close();
+                } catch (SQLException ex) {
+                    throw new DAOExecption("Error al cerrar conexion", ex);
+                }
+            }
+            if (stat != null) {
+                try {
+                    stat.close();
+                } catch (SQLException ex) {
+                    throw new DAOExecption("Error al cerrar Statments", ex);
+                }
+            }
+        }
+        return alumnos;
+    }
+
 
     public static void main(String[] args) throws SQLException {
         Connection conn = null;
 
         try {
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/escuela","root","root");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/escuela", "root", "root");
             System.out.println(conn.getMetaData().getDriverName()); //con esto corroboramos que no sea null
             AlumnoDAO dao = new AlumnoDAOMySQL(conn);
+
+
+
+            /*
             List<Alumno> alumnos = dao.listarTodos();
-            if (alumnos.size() == 0) {
+            */
+
+            /*
+            List<Alumno> alumnos = dao.buscarPorNombre("Jonatan");
+            if (!alumnos.isEmpty()) {
+                for (Alumno al : alumnos) {
+                    System.out.println(al);
+                }
+            } else {
                 System.out.println("Lista vacia");
             }
-            for(Alumno a : alumnos){
-                System.out.println(a);
-            }
+            */
+
+            /*
             dao.eliminar(alumnos.get(0));
+            */
+
+            dao.insertar(new Alumno("Juancho","Lopez",new Date(2015,11,11)));
+
 
         } catch (SQLException | DAOExecption ex) {
             new DAOExecption("Algo fallo", ex);
-        }finally {
+        } finally {
             try {
                 conn.close();
             } catch (SQLException ex) {
@@ -220,6 +278,4 @@ public class AlumnoDAOMySQL implements AlumnoDAO {
             }
         }
     }
-
-
 }

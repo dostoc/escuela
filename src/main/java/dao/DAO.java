@@ -17,6 +17,10 @@ public interface DAO<T,K> {
 
     List<T> listarTodos() throws DAOExecption;
 
+    List<T> buscarPorNombre(String nombre) throws DAOExecption;
+
     T buscarPorId(K id) throws DAOExecption, SQLException;
+
+
 
 }

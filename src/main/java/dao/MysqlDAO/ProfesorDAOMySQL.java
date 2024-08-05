@@ -1,11 +1,18 @@
 package dao.MysqlDAO;
 
+import dao.DAOExecption;
 import dao.ProfesorDAO;
 import modelo.Profesor;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public class ProfesorDAOMySQL implements ProfesorDAO {
+    @Override
+    public List<Profesor> buscarPorNombre(String nombre) throws DAOExecption {
+        return null;
+    }
+
     @Override
     public void insertar(Profesor K) {
 

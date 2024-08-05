@@ -1,11 +1,22 @@
 package dao.MysqlDAO;
 
 import dao.AsignaturaDAO;
+import dao.DAOExecption;
 import modelo.Asignatura;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public class AsignaturaDAOMySQL implements AsignaturaDAO {
+
+
+
+
+    @Override
+    public List<Asignatura> buscarPorNombre(String nombre) throws DAOExecption {
+        return null;
+    }
+
     @Override
     public void insertar(Asignatura K) {
 

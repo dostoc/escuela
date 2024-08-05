@@ -1,11 +1,13 @@
 
-“	java:S117
-"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ÿ±í²8§ìşş2J$c82ce17d-2e8e-4559-a8a2-bae9279725b0
-œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(£—¾8©ìşş2J$9c642f15-87b5-4f1c-a021-1d90f8095b16
+“	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ÿ±í²8§ìşş2J$cafca365-173e-4a22-a931-60cbdb74ba7d
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(£—¾8©ìşş2J$8700280d-2f09-4137-b78c-ebd175ca8340
 Ä
-java:S1186
-"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ÿ±í²8«ìşş2J$c67f0f2e-6f7e-48a2-addb-cec103908195
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ÿ±í²8«ìşş2J$2f17769b-a68b-4ad5-84ae-882fd16680ce
 É
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¥Á ‰şÿÿÿÿ8«ìşş2J$57ad965a-e809-470b-b888-9f98b850509a
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¥Á ‰şÿÿÿÿ8«ìşş2J$789d5e5d-1957-4b50-b018-48d15d482d58
 É
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¯Ä‹²ıÿÿÿÿ8«ìşş2J$fae30f84-5f3d-4c1e-b439-0a9843828315
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¯Ä‹²ıÿÿÿÿ8«ìşş2J$f13ec11c-fb26-41cb-82ba-da885179656b
+n
+java:S1168"+Return an empty collection instead of null.(¥¹ï8òµ·À‘2J$e0e40bbb-4348-45af-96e3-d5dd0f8c3eb6
+n
+java:S1168!"+Return an empty collection instead of null.(¥¹ï8«ã·À‘2J$90a06823-4e82-4c4c-87a5-0497e15877a7

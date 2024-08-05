@@ -1,11 +1,13 @@
 
-“	java:S117
-"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(İÈÅô8›®üş2J$8d0329c8-82b4-4d76-b9c0-9f5490114725
-•	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(£—¾J$41836a13-60b2-4f39-9ce3-78070b7ffa10
+“	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(İÈÅô8›®üş2J$90a035c1-056f-4afa-bc44-430d6515af00
+•	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(£—¾J$e1b20665-cf45-4d08-b01e-5273786e77c4
 Ä
-java:S1186
-"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(İÈÅô8®üş2J$43904526-b798-4b99-940b-174d254c76e2
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(İÈÅô8®üş2J$84ffb30e-4bec-473c-b47f-40f5f1816441
 Ä
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÓğÕÄ8®üş2J$74cfdbc9-61f2-4e04-a652-8ba273fd97d6
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÓğÕÄ8®üş2J$0897e8d5-bf39-4306-be5c-e17e2a3b5d08
 É
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÂÕ‘‡ıÿÿÿÿ8®üş2J$29c1f1a6-352d-4a7d-885f-23524e27f30c
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÂÕ‘‡ıÿÿÿÿ8®üş2J$cf4a8e65-a4a1-4525-9bde-1cc32216c344
+n
+java:S1168"+Return an empty collection instead of null.(¥¹ï8§á´À‘2J$1822b064-3826-4d9c-8629-b390421556c2
+n
+java:S1168!"+Return an empty collection instead of null.(¥¹ï8Áå¶À‘2J$761f50fd-500c-4ae3-b65c-bb97cfede02e
