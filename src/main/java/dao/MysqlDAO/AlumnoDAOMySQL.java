@@ -12,6 +12,27 @@ import java.util.List;
 public class AlumnoDAOMySQL implements AlumnoDAO {
 
 
+    @Override
+    public Long obtenerIndex() throws DAOExecption, SQLException {
+        // final String INDEX_ID = "SELECT Auto_increment FROM information_schema.tables WHERE table_schema = 'escuela' AND table_name = 'alumnos';";
+
+        Long index;
+        try (
+                PreparedStatement stat = conn.prepareStatement(INDEX_ID);
+                ResultSet rs = stat.executeQuery();
+        ) {
+            if(rs.next()) {
+                index = rs.getLong("Auto_increment");
+                System.out.println("index: "+index);
+                return index;
+            } else
+                return  null;
+        }
+        catch (SQLException e) {
+            throw new DAOExecption("Error sql" , e);
+        }
+    }
+
     final String INSERTSQL = "INSERT INTO alumnos(id_alumno, nombre, apellido, fecha_nac) VALUES (?,?,?,?)";
     final String UPDATESQL = "UPDATE alumnos SET nombre = ?, apellido = ?, fecha_nac = ? WHERE id_alumno  = ?";
     final String DELETESQL = "DELETE FROM alumnos WHERE id_alumno = ?";
@@ -19,28 +40,30 @@ public class AlumnoDAOMySQL implements AlumnoDAO {
     final String GETONESQL = "SELECT id_alumno, nombre, apellido, fecha_nac FROM alumnos WHERE id_alumno = ?";
     final String GETNAME = "SELECT id_alumno, nombre, apellido, fecha_nac FROM alumnos WHERE nombre = ?";
 
-    final String INDEX_ID = "SELECT Auto_increment \n" +
-            "FROM information_schema.tables \n" +
-            "WHERE table_schema = 'escuela' \n" +
-            "  AND table_name = 'alumnos';";
+    final String INDEX_ID = "SELECT Auto_increment FROM information_schema.tables WHERE table_schema = 'escuela' AND table_name = 'alumnos';";
 
 
     private Connection conn;
+
+
 
     public AlumnoDAOMySQL(Connection conn) {
         this.conn = conn;
     }
 
 
-    private Alumno crearAlumno(String nombre, String apellido, Date fechaNacimiento) throws DAOExecption {
-        Alumno a = new Alumno(nombre, apellido, fechaNacimiento);
+    @Override
+    public Alumno crearObjeto() throws DAOExecption, SQLException {
+        Alumno a = new Alumno("Lorenzo","Lamas",new Date(1982,03,01));
         try {
-            a.setId(obtenerAutoIncrement());
-        } catch (DAOExecption e) {
-            throw new DAOExecption("Error sql obtener index",e);
+            a.setId(obtenerIndex()+1);
+        } catch (SQLException e) {
+            throw new DAOExecption("Error a cargar index", e);
         }
         return a;
     }
+
+
 
     private Alumno convertir(ResultSet rs) throws SQLException {
         String nombre = rs.getString("nombre");
@@ -51,36 +74,6 @@ public class AlumnoDAOMySQL implements AlumnoDAO {
         return alumno;
     }
 
-    private Long obtenerAutoIncrement() throws DAOExecption {
-        Long index = null;
-        PreparedStatement stat = null;
-        ResultSet rs = null;
-
-        try {
-            stat = conn.prepareStatement(INSERTSQL);
-            rs = stat.executeQuery();
-            index = rs.getLong("AUTO_INCREMENT");
-        } catch (SQLException e) {
-            throw new DAOExecption("Error sql" , e);
-        } finally {
-            if (stat != null) {
-                try {
-                    stat.close();
-                } catch (SQLException e) {
-                    throw new DAOExecption("Error sql ", e);
-                }
-            }
-            if(rs != null){
-                try {
-                    rs.close();
-                } catch (SQLException e) {
-                    throw new DAOExecption("Error SQL" ,e);
-                }
-
-            }
-        }
-        return index;
-    }
 
     /*
     INSERT INTO alumnos(id_alumno, nombre, apellido, feccha_mac) VALUES (50,"PACO","PEREZ",2015-01-01);
@@ -309,10 +302,8 @@ public class AlumnoDAOMySQL implements AlumnoDAO {
             dao.eliminar(alumnos.get(0));
             */
 
-            a = 
+            dao.insertar(dao.crearObjeto());
 
-            dao.insertar(new Alumno("Juancho","Lopez",new Date(2015,11,11)));
-            dao.insertar(dao.);
 
         } catch (SQLException | DAOExecption ex) {
             new DAOExecption("Algo fallo", ex);

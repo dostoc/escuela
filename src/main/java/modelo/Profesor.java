@@ -11,8 +11,7 @@ public class Profesor {
     private String apellido;
 
 
-    public Profesor(Long id, String nombre, String apellido) {
-        this.id = id;
+    public Profesor(String nombre, String apellido) {
         this.nombre = nombre;
         this.apellido = apellido;
     }

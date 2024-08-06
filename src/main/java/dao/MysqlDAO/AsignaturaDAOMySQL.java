@@ -8,9 +8,15 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class AsignaturaDAOMySQL implements AsignaturaDAO {
+    @Override
+    public Long obtenerIndex() throws DAOExecption, SQLException {
+        return null;
+    }
 
-
-
+    @Override
+    public Asignatura crearObjeto() throws DAOExecption, SQLException {
+        return null;
+    }
 
     @Override
     public List<Asignatura> buscarPorNombre(String nombre) throws DAOExecption {

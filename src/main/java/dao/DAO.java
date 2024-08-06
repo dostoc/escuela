@@ -21,6 +21,7 @@ public interface DAO<T,K> {
 
     T buscarPorId(K id) throws DAOExecption, SQLException;
 
+    K obtenerIndex() throws DAOExecption, SQLException;
 
-
+    T crearObjeto() throws DAOExecption, SQLException;
 }

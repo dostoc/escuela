@@ -9,6 +9,16 @@ import java.util.List;
 
 public class MatriculaDAOMySQL implements MatriculaDAO {
     @Override
+    public Long obtenerIndex() throws DAOExecption, SQLException {
+        return 0L;
+    }
+
+    @Override
+    public Matricula crearObjeto() throws DAOExecption, SQLException {
+        return null;
+    }
+
+    @Override
     public List<Matricula> buscarPorNombre(String nombre) throws DAOExecption {
         return null;
     }
