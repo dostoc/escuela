@@ -16,6 +16,10 @@ public class Profesor {
         this.apellido = apellido;
     }
 
+    public Profesor() {
+
+    }
+
     public Long getId() {
         return id;
     }

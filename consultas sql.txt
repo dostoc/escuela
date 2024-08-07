@@ -1,0 +1,31 @@
+SELECT * FROM escuela.alumnos;
+
+SELECT * FROM alumnos a WHERE a.nombre = 'Jonatan';
+
+SELECT id_alumno, nombre, apellido, fecha_nac FROM alumnos WHERE nombre = "Jonatan";
+
+Alter table alumnos
+change column id_alumno id_alumno int not null auto_increment;
+
+
+SHOW TABLE STATUS LIKE 'alumnos';
+
+SELECT Auto_increment 
+FROM information_schema.tables 
+WHERE table_schema = 'escuela' 
+  AND table_name = 'alumnos';
+  
+create table profesores(
+ id_profesores int not null auto_increment primary key,
+ nombre varchar(50),
+ apellido varchar(50)
+);
+
+insert into profesores(nombre, apellido) values("Paco","Lamar");
+insert into profesores(nombre, apellido) values("Chesper","Relosky");
+
+UPDATE profesores SET nombre = "Chester", apellido = "Relhonskchisn" WHERE id_profesor = 2;
+
+ALTER TABLE profesores CHANGE COLUMN id_profesores id_profesor INT;
+
+select * from profesores;
